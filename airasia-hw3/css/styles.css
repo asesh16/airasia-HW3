@@ -1,0 +1,395 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    color: #222;
+    background: #f3f3f3;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+a {
+    color: #075e9b;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Shared header, navigation, footer ---------- */
+
+.site-header {
+    padding: 14px 24px;
+    background: #fff;
+    border-bottom: 3px solid #e10600;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #111;
+    font-size: 19px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: inline-grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e10600;
+    color: #fff;
+    font-style: italic;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    padding: 10px 24px;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.site-nav a {
+    padding: 2px 0;
+    text-decoration: none;
+}
+
+.site-nav a[aria-current="page"] {
+    border-bottom: 2px solid #075e9b;
+    font-weight: bold;
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 16px 24px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* ---------- Page layout ---------- */
+
+.page {
+    width: min(100% - 32px, 800px);
+    margin: 32px auto;
+}
+
+.page-wide {
+    width: min(100% - 32px, 1100px);
+}
+
+.panel {
+    padding: 24px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+h2 {
+    margin: 24px 0 12px;
+    font-size: 19px;
+}
+
+h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.page-heading h1 {
+    margin: 0;
+}
+
+/* ---------- Messages ---------- */
+
+.alert {
+    margin: 16px 0;
+    padding: 12px 14px;
+    border: 1px solid;
+    border-left-width: 5px;
+}
+
+.alert p,
+.alert ul {
+    margin: 0;
+}
+
+.alert ul {
+    padding-left: 20px;
+    margin-top: 6px;
+}
+
+.alert-success {
+    border-color: #2e7d32;
+    background: #eef7ee;
+    color: #1b4d1e;
+}
+
+.alert-error {
+    border-color: #c62828;
+    background: #fdecea;
+    color: #7a1414;
+}
+
+.alert-warning {
+    border-color: #b26a00;
+    background: #fff6e5;
+    color: #5c3700;
+}
+
+/* ---------- Gift card list ---------- */
+
+.gift-card-list {
+    display: grid;
+    gap: 12px;
+}
+
+.gift-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.gift-card img {
+    display: block;
+    width: 180px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.gift-card p {
+    margin: 0;
+}
+
+/* ---------- Gift card details / delete ---------- */
+
+.details-layout {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) minmax(250px, 1.3fr);
+    align-items: start;
+    gap: 24px;
+}
+
+.details-layout > img {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card-details {
+    margin: 0;
+}
+
+.card-details div {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.card-details dt {
+    font-weight: bold;
+}
+
+.card-details dd {
+    margin: 0;
+}
+
+/* ---------- Forms ---------- */
+
+.form-panel {
+    max-width: 480px;
+}
+
+.form-intro {
+    margin: -8px 0 20px;
+}
+
+.form-field {
+    display: grid;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.form-field label {
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    min-height: 38px;
+    padding: 8px;
+    border: 1px solid #888;
+    border-radius: 2px;
+    background: #fff;
+    color: #222;
+    font: inherit;
+}
+
+[aria-invalid="true"] {
+    border-color: #c62828;
+    outline: 1px solid #c62828;
+}
+
+.field-error {
+    margin: 0;
+    color: #b71c1c;
+    font-size: 14px;
+}
+
+.input-with-prefix {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-with-prefix span {
+    font-weight: bold;
+}
+
+.input-with-prefix input {
+    flex: 1;
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid #075e9b;
+    border-radius: 2px;
+    background: #075e9b;
+    color: #fff;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+    background: #064b7b;
+    text-decoration: none;
+}
+
+.button-danger {
+    border-color: #c62828;
+    background: #c62828;
+}
+
+.button-danger:hover {
+    background: #9f1f1f;
+}
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+/* ---------- Validation test harness ---------- */
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.test-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.test-table th,
+.test-table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+    vertical-align: top;
+}
+
+.test-table th {
+    background: #f0f0f0;
+}
+
+.test-table code {
+    word-break: break-all;
+}
+
+.result {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.result-pass {
+    background: #2e7d32;
+}
+
+.result-fail {
+    background: #c62828;
+}
+
+@media (max-width: 600px) {
+    .site-header,
+    .site-nav {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .gift-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .gift-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .details-layout {
+        grid-template-columns: 1fr;
+    }
+}

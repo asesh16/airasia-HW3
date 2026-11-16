@@ -1,0 +1,81 @@
+=====================================================================
+HW3 - PHP/SQL Integration (Gift Card Management)
+=====================================================================
+
+1. AI tool used
+Claude Code (Anthropic, Claude Opus 5.5) in the VS Code extension.
+
+2. Prompts used
+- "Help me ensure that I met all of the requirements for this assignment" (I attached the HW3 assignment PDF.
+  The AI also read the AirAsia Requirements Document for the table and
+  column names.)
+
+3. How AI supported my work
+AI converted my HW2 static pages into PHP pages backed by SQLite and PDO.
+It wrote these files:
+- schema.sql and seed.sql, using the GIFTCARD and ACCOUNT column names
+  from the requirements document
+- Shared header, nav, and footer templates
+- A shared PDO connection (includes/db.php)
+- Reusable validation functions (includes/validation.php)
+- One form partial shared by the add and update pages
+- The validation test harness
+AI also helped draft the README traceability table and the test report.
+It ran the test harness and tested every page against a copy of the
+database, including invalid ids, altered form values, and HTML/script
+text in a card name.
+
+4. One AI suggestion tested, revised, or rejected
+The first draft of the shared Gift Card form used the "novalidate"
+attribute so that invalid values would always reach the server during
+testing. That turned off the browser's own checks (required, min, step),
+which the assignment says improve the user experience. I revised the form
+to remove "novalidate". Server-side validation is unchanged. Altered or
+invalid requests are still tested by sending them directly to the server
+(test T07).
+
+Another suggestion I kept on purpose:
+- The requirements document says card-update forwards to card-list and
+  card-delete needs no HTML display.
+- The HW3 assignment requires card-update to show the updated details
+  and card-delete to show a POST confirmation page.
+- I followed the HW3 workflow for both, because the assignment states
+  that workflow explicitly.
+
+5. How I verified the final code and database behavior
+- Rebuilt rewards.db from schema.sql and seed.sql and confirmed 5 ACCOUNT
+  rows and 20 GIFTCARD rows with sqlite3.
+- Ran tests/validation-tests.php: 27 of 27 tests PASS.
+- Ran every workflow (list, details, add, update, delete) and checked the
+  database after each change with sqlite3 SELECT queries.
+- Tried invalid and altered input and bad card_id values, and confirmed
+  that errors were shown and no records changed.
+- Confirmed that a GET request to card-delete.php never deletes a record.
+- All results are documented in test-report.md.
+
+=====================================================================
+HW2 - Static HTML/CSS Prototype (previous assignment)
+=====================================================================
+
+AI tool used: Copilot AI assistant in VS Code (Copilot SDK).
+
+Prompts used:
+- "Help me connect the five static PHP-extension HTML pages for this gift-card website. Help me connect them to each other with links and form actions. Use an external stylesheet, and do not use PHP logic, databases, or JavaScript."
+- "Make the pages accessible and responsive, use labeled form fields and realistic gift-card sample data, and create a polished but easy-to-understand visual style."
+- "Review the links, image paths, form actions, and page requirements."
+
+How AI supported the work:
+AI helped draft the navigation, images, sample reward content, and responsive CSS. I reviewed the generated pages and verified that the links, form destinations, and image files match the assignment workflow.
+
+Example of a suggestion tested:
+AI suggested using labeled inputs and native form controls for the add and update pages. I checked that each label's "for" value matches its control's "id", that the update fields contain the existing Starbucks values, and that both forms submit to card-list.php. I also kept the forms as static HTML rather than adding PHP, JavaScript, or data storage.
+
+Follow-up prompt:
+"Please help me to better follow the design in these wireframes "
+"Please check the assignment criteria in the ReadMe for completeness against my code"
+
+How the wireframes guided the revision:
+I reviewed the supplied wireframes and simplified the pages to use plain headings, bordered panels, gift-card image and information rows, a simple details layout, and straightforward single-column forms.
+
+AI prompt correction:
+I followed the rubric clarification to show several gift cards in the list, despite having only generated one card for an example. I prompted copilot to generate several more card images and help to input details for the cards.

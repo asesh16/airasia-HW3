@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title">
+  <title id="title">Food and Beverage gift card</title>
+  <rect width="640" height="360" rx="28" fill="#d9480f"/>
+  <circle cx="540" cy="70" r="170" fill="#a8350a" opacity=".45"/>
+  <circle cx="90" cy="330" r="120" fill="#fff" opacity=".08"/>
+  <circle cx="72" cy="78" r="30" fill="#fff"/>
+  <text x="72" y="89" fill="#d9480f" font-family="Arial,sans-serif" font-size="30" font-weight="700" font-style="italic" text-anchor="middle">A</text>
+  <text x="118" y="88" fill="#fff" font-family="Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="2">AIRASIA REWARDS</text>
+  <text x="44" y="200" fill="#fff" font-family="Georgia,serif" font-size="50">Food and Beverage</text>
+  <text x="44" y="246" fill="#fff" font-family="Arial,sans-serif" font-size="24" opacity=".9">Dine, sip, and treat yourself.</text>
+  <path d="M48 292h170" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+  <text x="596" y="306" fill="#fff" font-family="Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="3" text-anchor="end">GIFT CARD</text>
+</svg>
